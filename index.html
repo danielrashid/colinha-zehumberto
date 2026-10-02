@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#119F4E">
-  <meta name="description" content="Monte e salve sua colinha eleitoral para o Distrito Federal.">
-  <title>Minha Colinha | Wellington Luiz Deputado Distrital</title>
-  <link rel="icon" type="image/png" href="./icon.jpg">
+  <meta name="theme-color" content="#1555A4">
+  <meta name="description" content="Monte e salve sua colinha eleitoral com o Deputado Federal Zé Humberto, 1555.">
+  <title>Minha Colinha | Zé Humberto Deputado Federal 1555</title>
+  <link rel="icon" type="image/png" href="./faviz.png">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,10 +14,10 @@
   <!-- Font Awesome for crisp icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Google Fonts: Inter & Barlow for Urna digit feeling -->
+  <!-- Google Fonts: Montserrat for campaign numbers and Chakra Petch for urna digits -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
   
   <!-- html2canvas for generating image export -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -27,12 +27,17 @@
     body {
       font-family: 'Inter', sans-serif;
       -webkit-tap-highlight-color: transparent;
-      background-color: #f3f8f4;
-      background-image: radial-gradient(ellipse at top left, rgba(17,159,78,.11), transparent 34rem),
-        linear-gradient(180deg, #f8fbf8 0%, #edf5ef 100%);
+      background-color: #f5f8fc;
+      background-image: radial-gradient(ellipse at top left, rgba(21,85,164,.12), transparent 34rem),
+        linear-gradient(180deg, #fbfcfe 0%, #edf3fa 100%);
     }
     .font-urna {
       font-family: 'Chakra Petch', monospace;
+    }
+    .font-brand-number {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
     }
     .urna-box {
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
@@ -45,24 +50,12 @@
       animation: blink 0.9s infinite;
     }
     header {
-      background: rgba(255, 255, 255, .96) !important;
-      color: #0b4325 !important;
-      box-shadow: 0 8px 26px rgba(15, 70, 40, .08) !important;
+      background: rgba(21, 85, 164, .98) !important;
+      color: #ffffff !important;
+      box-shadow: 0 8px 26px rgba(12, 35, 64, .22) !important;
       backdrop-filter: blur(16px);
     }
-    main > section {
-      background: linear-gradient(125deg, #0b2417 0%, #123d27 58%, #176b3b 100%) !important;
-      border-color: #119f4e !important;
-    }
-    #cargosContainer > #card-dep_distrital {
-      background: linear-gradient(110deg, #102c1d, #17452b) !important;
-      border-color: #119f4e !important;
-      align-self: start;
-    }
-    #colinhaExportCard { background: #f2f8f3 !important; }
-    @media (max-width: 640px) {
-      main > section { border-left-width: 6px; }
-    }
+    #colinhaExportCard { background: #f5f8fc !important; }
     /* Printable cheat sheet styling */
     @media print {
       body * {
@@ -89,31 +82,43 @@
         extend: {
           colors: {
             brand: {
-              DEFAULT: '#119F4E',
-              50: '#eff8f1',
-              100: '#dcf0e1',
-              200: '#b9e2c5',
-              300: '#87ce9d',
-              400: '#4dbb70',
-              500: '#119F4E',
-              600: '#0d8540',
-              700: '#0b6934',
-              800: '#0c532c',
-              900: '#0b4325',
+              DEFAULT: '#1555A4',
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#1555A4',
+              600: '#164887',
+              700: '#153b6b',
+              800: '#123153',
+              900: '#102844',
             },
-            // Keep old utility names working while moving the UI to Wellington's palette.
-            roney: '#119F4E',
+            // Reuse the existing green utilities for the campaign's blue palette.
+            emerald: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#1555A4',
+              600: '#164887',
+              700: '#153b6b',
+              800: '#123153',
+              900: '#102844',
+            },
+            roney: '#1555A4',
             amber: {
-              50: '#f2f8f3',
-              100: '#e3f1e6',
-              200: '#cce6d2',
-              300: '#a7d7b3',
-              400: '#75c58a',
-              500: '#43b564',
-              600: '#269a4c',
-              700: '#1c7c3d',
-              800: '#176334',
-              900: '#14512d',
+              50: '#fffbea',
+              100: '#fff3bf',
+              200: '#ffe680',
+              300: '#ffd94d',
+              400: '#ffcf33',
+              500: '#ffc629',
+              600: '#e6a900',
+              700: '#b88300',
+              800: '#8a6200',
+              900: '#664900',
             },
             celina: {
               50: '#eff6ff',
@@ -141,32 +146,32 @@
 </head>
 <body class="bg-amber-50 text-slate-800 min-h-screen pb-24">
 
-  <header class="sticky top-0 z-40 border-b border-emerald-100 bg-white/95 text-slate-900 shadow-sm backdrop-blur-xl">
+  <header class="sticky top-0 z-40 border-b border-white/20 bg-brand text-white shadow-sm backdrop-blur-xl">
     <div class="max-w-5xl mx-auto px-4 py-2.5 sm:py-3 flex items-center justify-between gap-3 sm:gap-5">
       <div class="flex min-w-0 items-center gap-3 sm:gap-5">
-        <div class="h-11 w-40 flex-shrink-0 overflow-hidden rounded-lg bg-white sm:h-14 sm:w-56">
-          <img src="./logo-w.jpg" alt="Wellington Luiz • Deputado Distrital" class="h-full w-full object-contain">
+        <div class="h-11 w-40 flex-shrink-0 overflow-hidden rounded-lg bg-transparent sm:h-14 sm:w-56">
+          <img src="./logo.png" alt="Zé Humberto • Deputado Federal 1555" class="h-full w-full object-contain">
         </div>
-        <div class="hidden border-l border-emerald-100 pl-4 lg:block">
-          <p class="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-[0.18em] text-emerald-800">
-            <i class="fa-solid fa-check-to-slot text-emerald-600"></i> Colinha eleitoral
+        <div class="hidden border-l border-white/25 pl-4 lg:block">
+          <p class="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-[0.18em] text-white">
+            <i class="fa-solid fa-check-to-slot text-amber-300"></i> Colinha digital
           </p>
-          <p class="mt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-500">Distrito Federal • 2026</p>
+          <p class="mt-1 text-[10px] font-semibold uppercase tracking-wider text-amber-200">Eleições 2026</p>
         </div>
       </div>
       <div class="flex flex-shrink-0 items-center gap-2 sm:gap-3">
-        <div class="hidden items-center gap-2 rounded-xl border border-emerald-100 bg-emerald-50 px-3 py-2 sm:flex">
-          <span class="text-[8px] font-black uppercase leading-tight tracking-wider text-emerald-800">Número<br>na urna</span>
-          <span class="h-7 w-px bg-emerald-200"></span>
-          <strong class="font-urna text-xl leading-none text-emerald-900">15123</strong>
+        <div class="hidden items-center gap-2 rounded-xl border border-amber-300 bg-amber-400 px-3 py-2 sm:flex">
+          <span class="text-[8px] font-black uppercase leading-tight tracking-wider text-blue-950">Número<br>na urna</span>
+          <span class="h-7 w-px bg-blue-900/25"></span>
+          <strong class="font-brand-number text-xl leading-none text-blue-950">1555</strong>
         </div>
-        <button id="soundToggleBtn" onclick="toggleSound()" aria-label="Ativar ou desativar sons da urna" class="flex h-10 w-10 items-center justify-center rounded-full border border-emerald-100 bg-emerald-50 text-emerald-900 shadow-sm transition hover:bg-emerald-100 sm:h-11 sm:w-11">
+        <button id="soundToggleBtn" onclick="toggleSound()" aria-label="Ativar ou desativar sons da urna" class="flex h-10 w-10 items-center justify-center rounded-full border border-amber-300 bg-amber-400 text-blue-950 shadow-sm transition hover:bg-amber-300 sm:h-11 sm:w-11">
           <i id="soundIcon" class="fa-solid fa-volume-high text-roney"></i>
           <span class="sr-only" id="soundLabel">Sons da Urna</span>
         </button>
       </div>
     </div>
-    <div class="h-[3px] bg-gradient-to-r from-emerald-300 via-brand to-transparent"></div>
+    <div class="h-[3px] bg-gradient-to-r from-amber-300 via-amber-400 to-transparent"></div>
   </header>
 
   <main class="max-w-5xl mx-auto px-4 pt-4 sm:pt-7 space-y-6">
@@ -192,40 +197,30 @@
       </button>
     </div> -->
 
-    <!-- CANDIDATO EM DESTAQUE: WELLINGTON LUIZ -->
-    <section class="relative bg-gradient-to-br from-neutral-950 via-stone-900 to-amber-950 rounded-2xl p-5 sm:p-7 text-white shadow-2xl border-l-[10px] border-roney overflow-hidden">
-      <div class="absolute -right-10 -bottom-10 w-52 h-52 bg-roney/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute top-0 right-0 h-1.5 w-2/5 bg-gradient-to-l from-roney to-transparent"></div>
-      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div class="flex items-center gap-4 sm:gap-6">
-          <div class="relative flex-shrink-0">
-            <div class="w-28 h-32 sm:w-36 sm:h-40 rounded-lg overflow-hidden border-2 border-roney shadow-xl bg-white rotate-[-2deg]">
-              <img src="./skin.jpg" alt="Wellington Luiz" class="w-full h-full object-cover object-top">
-            </div>
-            <span class="absolute -bottom-2 -right-2 bg-roney text-neutral-950 text-xs font-black px-2.5 py-1 rounded shadow border-2 border-neutral-950">DF</span>
-          </div>
-          <div>
-            <span class="inline-flex items-center gap-1.5 text-roney text-[11px] sm:text-xs font-black px-2.5 py-1 rounded border border-roney/50 uppercase tracking-[0.16em]">
-              <i class="fa-solid fa-leaf text-green-300"></i> Onda Verde
+    <!-- CANDIDATO EM DESTAQUE: ZE HUMBERTO -->
+    <section class="relative isolate overflow-hidden rounded-2xl border-t-[7px] border-amber-400 bg-white text-blue-950 shadow-xl ring-1 ring-blue-950/10">
+      <div class="grid md:grid-cols-[minmax(0,1fr)_17rem]">
+        <div class="order-2 flex min-w-0 flex-col justify-between p-5 sm:p-8 md:order-1">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center gap-2 rounded-sm bg-blue-950 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-white">
+              <i class="fa-solid fa-star text-amber-400"></i> MDB • Distrito Federal
             </span>
-            <p class="mt-3 text-xs sm:text-sm text-stone-300 font-bold uppercase tracking-widest">Deputado Distrital <span class="text-roney">•</span> MDB</p>
-            <h2 class="text-3xl sm:text-5xl font-black text-white leading-tight tracking-tight">WELLINGTON <span class="text-roney">LUIZ</span></h2>
-            <p class="text-sm text-stone-300 mt-1">Representante do Distrito Federal</p>
-            <p class="mt-2 text-xs text-emerald-300 font-semibold"><i class="fa-solid fa-circle-check"></i> Deputado Distrital • MDB</p>
+            <span class="font-brand-number text-sm text-blue-800">1555</span>
+          </div>
+          <div class="py-6 sm:py-9">
+            <p class="text-[10px] font-black uppercase tracking-[0.2em] text-amber-700">Deputado Federal</p>
+            <h2 class="mt-2 text-4xl font-black leading-[0.95] text-blue-950 sm:text-6xl">ZÉ<br><span class="text-blue-700">HUMBERTO</span></h2>
+            <p class="mt-3 max-w-sm text-sm font-medium text-slate-600">Representante do Distrito Federal</p>
+          </div>
+          <div class="inline-flex w-fit items-center gap-4 border-l-4 border-amber-400 bg-blue-50 px-4 py-3">
+            <span class="text-[9px] font-black uppercase leading-tight tracking-wider text-blue-800">Meu voto<br>para federal</span>
+            <span class="font-brand-number text-4xl leading-none text-blue-950">1555</span>
           </div>
         </div>
-        <div class="bg-roney rounded-xl p-4 sm:p-5 border border-roney flex md:flex-col items-center justify-between md:justify-center gap-4 shadow-lg shadow-black/30">
-          <div class="md:text-center">
-            <span class="text-[11px] uppercase tracking-wider text-white font-black block">Número para votar</span>
-            <span class="text-xs text-white font-semibold">Deputado Distrital</span>
-          </div>
-          <div class="flex items-center gap-1.5" aria-label="Número 15123">
-            <span class="w-9 h-12 sm:w-11 sm:h-14 bg-white text-roney font-urna font-black text-2xl sm:text-3xl flex items-center justify-center rounded-md shadow-inner">1</span>
-            <span class="w-9 h-12 sm:w-11 sm:h-14 bg-white text-roney font-urna font-black text-2xl sm:text-3xl flex items-center justify-center rounded-md shadow-inner">5</span>
-            <span class="w-9 h-12 sm:w-11 sm:h-14 bg-white text-roney font-urna font-black text-2xl sm:text-3xl flex items-center justify-center rounded-md shadow-inner">1</span>
-            <span class="w-9 h-12 sm:w-11 sm:h-14 bg-white text-roney font-urna font-black text-2xl sm:text-3xl flex items-center justify-center rounded-md shadow-inner">2</span>
-            <span class="w-9 h-12 sm:w-11 sm:h-14 bg-white text-roney font-urna font-black text-2xl sm:text-3xl flex items-center justify-center rounded-md shadow-inner">3</span>
-          </div>
+        <div class="relative order-1 min-h-[230px] overflow-hidden bg-[#e5e2e0] sm:min-h-[280px] md:order-2 md:min-h-[360px] md:bg-blue-950">
+          <img src="./zepezao.jpg" alt="Zé Humberto" class="absolute inset-0 h-full w-full object-contain md:object-cover md:object-top">
+          <span class="absolute left-4 top-4 bg-amber-400 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-blue-950">Zé Humberto • 15</span>
+          <div class="absolute inset-x-0 bottom-0 h-1.5 bg-amber-400"></div>
         </div>
       </div>
     </section>
@@ -234,7 +229,7 @@
     <div class="pt-2 flex items-center justify-between">
       <div>
         <h3 class="text-base sm:text-lg font-black text-slate-800 flex items-center gap-2">
-          <i class="fa-solid fa-list-check text-amber-800"></i>
+          <i class="fa-solid fa-list-check text-blue-800"></i>
           Preencha sua colinha
         </h3>
       </div>
@@ -250,7 +245,7 @@
 
     <!-- Big Final Generate Action -->
     <div class="pt-4 text-center">
-      <button onclick="openColinhaModal()" class="w-full sm:w-2/3 mx-auto flex items-center justify-center gap-3 bg-roney hover:bg-amber-500 text-neutral-950 font-extrabold text-base sm:text-lg py-4 px-8 rounded-xl shadow-xl shadow-amber-900/20 active:scale-95 transition-all">
+      <button onclick="openColinhaModal()" class="w-full sm:w-2/3 mx-auto flex items-center justify-center gap-3 bg-roney hover:bg-amber-500 text-white font-extrabold text-base sm:text-lg py-4 px-8 rounded-xl shadow-xl shadow-amber-900/20 active:scale-95 transition-all">
         <i class="fa-solid fa-receipt text-roney text-xl"></i>
         <span>GERAR MINHA COLINHA DIGITAL AGORA</span>
       </button>
@@ -258,26 +253,26 @@
     </div>
   </main>
 
-  <footer class="mt-14 text-white overflow-hidden" style="background: linear-gradient(115deg, #082719 0%, #0c4628 58%, #119f4e 130%);">
-    <div class="h-1.5 bg-gradient-to-r from-green-300 via-brand to-emerald-900"></div>
+  <footer class="mt-14 text-white overflow-hidden" style="background: linear-gradient(115deg, #0c2340 0%, #123f73 58%, #1555a4 130%);">
+    <div class="h-1.5 bg-gradient-to-r from-amber-300 via-brand to-blue-900"></div>
     <div class="max-w-5xl mx-auto px-4 py-8 sm:py-10 grid grid-cols-[minmax(0,1fr)_132px] sm:grid-cols-[minmax(0,1fr)_176px] items-center gap-5 sm:gap-8">
       <div class="min-w-0">
-        <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-green-100">
-          <i class="fa-solid fa-leaf text-green-300"></i> Onda Verde
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-blue-100">
+          <i class="fa-solid fa-star text-amber-300"></i> MDB • 1555
         </span>
-        <p class="mt-4 text-[10px] uppercase tracking-[0.2em] text-green-200 font-bold">Eleições • Distrito Federal • 2026</p>
-        <p class="mt-1 text-2xl sm:text-4xl font-black leading-tight">WELLINGTON <span class="text-green-300">LUIZ</span></p>
-        <div class="mt-3 inline-flex items-center gap-3 rounded-xl bg-white px-3 py-2 text-emerald-950 shadow-lg">
-          <span class="text-[9px] font-black uppercase tracking-wider">Deputado Distrital</span>
-          <span class="h-6 w-px bg-emerald-200"></span>
-          <span class="font-urna text-2xl font-black leading-none">15123</span>
+        <p class="mt-4 text-[10px] uppercase tracking-[0.2em] text-blue-200 font-bold">Eleições • Distrito Federal</p>
+        <p class="mt-1 text-2xl sm:text-4xl font-black leading-tight">ZÉ <span class="text-amber-300">HUMBERTO</span></p>
+        <div class="mt-3 inline-flex items-center gap-3 rounded-xl bg-white px-3 py-2 text-blue-950 shadow-lg">
+          <span class="text-[9px] font-black uppercase tracking-wider">Deputado Federal</span>
+          <span class="h-6 w-px bg-blue-200"></span>
+          <span class="font-brand-number text-2xl leading-none">1555</span>
         </div>
         <div>
-          <a href="https://dadosabertos.tse.jus.br/dataset/candidatos-2026" target="_blank" rel="noreferrer" class="mt-4 inline-block text-[10px] text-green-100/75 underline underline-offset-2">Dados e fotos: TSE • Candidatos 2026</a>
+          <a href="https://dadosabertos.tse.jus.br/dataset/candidatos-2026" target="_blank" rel="noreferrer" class="mt-4 inline-block text-[10px] text-blue-100/75 underline underline-offset-2">Dados e fotos: TSE</a>
         </div>
       </div>
       <div class="justify-self-end w-[132px] h-[150px] sm:w-[176px] sm:h-[198px] rounded-2xl bg-white p-1.5 shadow-2xl ring-1 ring-white/30 rotate-2">
-        <img src="./ondaverde.png" alt="Eu faço parte da Onda Verde" class="w-full h-full rounded-xl object-contain" loading="lazy">
+        <img src="./zehumberto.jpg" alt="Zé Humberto, Deputado Federal 1555" class="w-full h-full rounded-xl object-contain" loading="lazy">
       </div>
     </div>
   </footer>
@@ -336,7 +331,7 @@
     <div class="bg-white w-full max-w-xl rounded-3xl shadow-2xl overflow-hidden my-auto max-h-[95vh] flex flex-col">
       
       <!-- Modal Header -->
-      <div class="bg-gradient-to-r from-neutral-950 to-stone-900 border-b-4 border-roney p-4 text-white flex items-center justify-between flex-shrink-0">
+      <div class="bg-gradient-to-r from-blue-950 to-blue-800 border-b-4 border-amber-400 p-4 text-white flex items-center justify-between flex-shrink-0">
         <div class="flex items-center gap-2">
           <i class="fa-solid fa-receipt text-roney text-lg"></i>
           <h3 class="font-black text-base sm:text-lg">Sua Colinha Digital DF</h3>
@@ -348,27 +343,18 @@
 
       <!-- Scrollable Printable / Shareable Card Area -->
       <div class="p-4 sm:p-6 overflow-y-auto space-y-4 flex-grow" id="printArea">
-        <div id="colinhaExportCard" class="overflow-hidden rounded-2xl border border-emerald-200 bg-[#f7faf7] shadow-sm">
-          <div class="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-green-900 to-green-700 px-4 py-5 text-white sm:px-5">
-            <div class="absolute -right-7 -top-12 h-36 w-36 rounded-full border border-white/10"></div>
-            <div class="absolute -right-1 -top-7 h-24 w-24 rounded-full border border-white/10"></div>
-            <div class="relative flex items-start justify-between gap-3">
+        <div id="colinhaExportCard" class="overflow-hidden rounded-xl border border-blue-200 bg-white shadow-sm">
+          <div class="relative overflow-hidden bg-blue-950 px-4 py-4 text-white sm:px-5">
+            <div class="absolute inset-y-0 left-0 w-1.5 bg-amber-400"></div>
+            <div class="relative flex items-center justify-between gap-3 pl-2">
               <div class="min-w-0">
-                <span class="inline-flex items-center gap-1.5 text-[9px] font-extrabold uppercase tracking-[0.18em] text-green-200">
-                  <i class="fa-solid fa-leaf"></i> Onda Verde • Distrito Federal
-                </span>
-                <h2 class="mt-2 text-2xl font-black leading-none tracking-tight sm:text-3xl">MINHA COLINHA</h2>
-                <p class="mt-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">Eleições 2026</p>
+                <img src="./logo.png" alt="Zé Humberto 1555" class="h-9 w-44 object-contain object-left">
+                <p class="mt-2 text-[9px] font-extrabold uppercase tracking-[0.18em] text-blue-100">Colinha eleitoral • 2026</p>
               </div>
-              <div class="relative flex-shrink-0 rounded-xl border border-white/15 bg-white/10 px-3 py-2 text-right backdrop-blur-sm">
-                <span class="block text-[8px] font-extrabold uppercase tracking-wider text-green-100/80">WELLINGTON LUIZ</span>
-                <strong class="font-urna text-2xl font-black leading-tight text-white">15123</strong>
+              <div class="flex h-12 w-12 flex-shrink-0 flex-col items-center justify-center bg-amber-400 text-blue-950">
+                <strong class="text-lg font-black leading-none">DF</strong>
+                <span class="mt-0.5 text-[7px] font-extrabold uppercase tracking-wider">Brasil</span>
               </div>
-            </div>
-            <div class="relative mt-4 flex items-center gap-2 border-t border-white/15 pt-3">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-green-200"><i class="fa-solid fa-check text-xs"></i></span>
-              <span class="text-xs font-bold">Wellington Luiz <span class="font-medium text-green-100/80">• MDB</span></span>
-              <span class="ml-auto rounded-full bg-white/10 px-2.5 py-1 text-[8px] font-extrabold uppercase tracking-wider text-green-100">Meu voto</span>
             </div>
           </div>
 
@@ -376,9 +362,9 @@
             <!-- Injected by JavaScript -->
           </div>
 
-          <div class="mx-4 mb-4 flex items-center justify-between gap-3 border-t border-emerald-100 pt-3 text-[9px] text-slate-500 sm:mx-5 sm:mb-5">
+          <div class="mx-4 mb-4 flex items-center justify-between gap-3 border-t border-blue-200 pt-3 text-[9px] text-slate-500 sm:mx-5 sm:mb-5">
             <span>Guarde no celular para o dia da eleição</span>
-            <span class="font-extrabold uppercase tracking-wider text-emerald-800">DF • 2026</span>
+            <span class="font-extrabold uppercase tracking-wider text-blue-800">DF</span>
           </div>
         </div>
       </div>
@@ -496,12 +482,7 @@
     }
 
     // DEFINITIONS OF CARGOS (Standard TSE order)
-    // 1. Deputado Federal (cargo 6, 4 dígitos)
-    // 2. Deputado Distrital (cargo 8, 5 dígitos)
-    // 3. 1º Senador (cargo 5, 3 dígitos)
-    // 4. 2º Senador (cargo 5, 3 dígitos)
-    // 5. Governador (cargo 3 - Celina Leão 11 pré-preenchida, mas editável)
-    // 6. Presidente (cargo 1, 2 dígitos)
+    // Standard TSE order, with Zé Humberto pre-filled for federal deputy.
     const CARGOS_CONFIG = [
       {
         id: 'dep_federal',
@@ -511,29 +492,30 @@
         digitos: 4,
         placeholder: '0000',
         badge: 'DF',
-        numero: '',
-        confirmado: false,
-        candidato: null,
+        numero: '1555',
+        confirmado: true,
+        locked: true,
+        candidato: {
+          nome: 'JOSE HUMBERTO PIRES DE ARAUJO',
+          nomeUrna: 'ZÉ HUMBERTO',
+          numero: '1555',
+          partido: 'MDB',
+          siglaPartido: 'MDB',
+          foto: './fotos-tse/FDF70002538941_div.jpg'
+        },
         loading: false
       },
       {
         id: 'dep_distrital',
         nome: 'Deputado Distrital',
-        cargoApi: '8', // TSE DF code
-        fallbackCargoApi: '7', // standard estadual fallback
+        cargoApi: '8',
+        fallbackCargoApi: '7',
         digitos: 5,
         placeholder: '00000',
         badge: 'DF',
-        numero: '15123',
-        confirmado: true,
-        candidato: {
-          nome: 'WELLINGTON LUIZ DE SOUZA SILVA',
-          nomeUrna: 'WELLINGTON LUIZ',
-          numero: '15123',
-          partido: 'MDB',
-          siglaPartido: 'MDB',
-          foto: './fotos-tse/FDF70002538797_div.jpg'
-        },
+        numero: '',
+        confirmado: false,
+        candidato: null,
         loading: false
       },
       {
@@ -572,6 +554,7 @@
         badge: 'DF',
         numero: '11',
         confirmado: true,
+        locked: true,
         candidato: {
           nome: 'CELINA LEÃO HIZIM FERREIRA',
           nomeUrna: 'CELINA LEÃO',
@@ -606,36 +589,9 @@
       CARGOS_CONFIG.forEach(item => {
         const card = document.createElement('div');
         card.id = `card-${item.id}`;
-        if (item.id === 'dep_distrital') {
-          card.className = 'relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-950 via-green-900 to-green-700 p-4 sm:p-6 text-white shadow-xl shadow-emerald-950/15';
-          card.innerHTML = `
-            <div class="absolute -right-12 -top-24 h-64 w-64 rounded-full border border-white/10"></div>
-            <div class="absolute -right-3 -top-16 h-48 w-48 rounded-full border border-white/10"></div>
-            <div class="relative flex flex-col gap-5 sm:flex-row sm:items-center">
-              <div class="flex min-w-0 items-center gap-3 sm:gap-4">
-                <div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-2xl border-2 border-white/35 bg-white/10 shadow-lg sm:h-20 sm:w-20">
-                  <img src="${item.candidato.foto}" alt="${item.candidato.nomeUrna}" class="h-full w-full object-cover object-top">
-                </div>
-                <div class="min-w-0">
-                  <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[9px] font-extrabold uppercase tracking-[0.18em] text-green-100 ring-1 ring-white/15">
-                    <i class="fa-solid fa-leaf text-green-300"></i> Meu voto é certo
-                  </span>
-                  <p class="mt-3 text-[10px] font-bold uppercase tracking-[0.18em] text-green-200">Deputado Distrital • MDB</p>
-                  <h4 class="text-lg font-black leading-tight sm:text-xl">${item.candidato.nomeUrna}</h4>
-                </div>
-              </div>
-              <div class="flex items-center justify-between gap-3 rounded-2xl border border-white/15 bg-white/10 px-3 py-3 backdrop-blur-sm sm:ml-auto sm:min-w-[150px] sm:flex-col sm:items-start sm:px-4 sm:py-4">
-                <span class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-green-100/80">Número na urna</span>
-                <span class="font-urna text-3xl font-black tracking-[0.12em] text-white sm:text-4xl">15123</span>
-              </div>
-            </div>
-          `;
-          container.appendChild(card);
-          return;
-        }
-
         const step = String(CARGOS_CONFIG.indexOf(item) + 1).padStart(2, '0');
         const isGovernor = item.id === 'governador';
+        const isLocked = item.locked === true;
         const stepBadge = isGovernor
           ? '<img src="./pata.png" alt="Símbolo da Celina Leão" class="h-7 w-7 object-contain">'
           : step;
@@ -662,13 +618,12 @@
             <div class="mt-4 rounded-2xl border ${isGovernor ? 'border-blue-100 bg-blue-50/60' : 'border-emerald-100 bg-emerald-50/60'} p-3 sm:p-4">
               <div class="mb-2 flex items-center justify-between">
                 <span class="text-[9px] font-extrabold uppercase tracking-[0.18em] ${isGovernor ? 'text-blue-800/70' : 'text-emerald-800/70'}">Seu número</span>
-                <span class="text-[9px] font-semibold text-slate-400">Toque nos números para digitar</span>
               </div>
               <div class="flex items-center justify-between gap-3">
-                <div class="flex min-w-0 cursor-pointer items-center gap-1.5 sm:gap-2" onclick="openKeypadFor('${item.id}')" aria-label="Digite o número para ${item.nome}">
+                <div class="flex min-w-0 ${isLocked ? 'cursor-not-allowed' : 'cursor-pointer'} items-center gap-1.5 sm:gap-2" ${isLocked ? '' : `onclick="openKeypadFor('${item.id}')"`} aria-label="${isLocked ? `${isGovernor ? 'Nela' : 'Nesse'} eu confio: ${item.nome}` : `Digite o número para ${item.nome}`}" aria-readonly="${isLocked}">
                   ${renderDigitBoxes(item)}
                 </div>
-                <button onclick="openKeypadFor('${item.id}')" title="Abrir teclado da urna" class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl ${isGovernor ? 'bg-blue-700 hover:bg-blue-800' : 'bg-emerald-800 hover:bg-emerald-900'} text-white shadow-sm transition active:scale-95">
+                <button onclick="openKeypadFor('${item.id}')" title="${isLocked ? `${isGovernor ? 'Nela' : 'Nesse'} eu confio` : 'Abrir teclado da urna'}" aria-label="${isLocked ? `${isGovernor ? 'Nela' : 'Nesse'} eu confio: ${item.nome}` : `Abrir teclado para ${item.nome}`}" ${isLocked ? 'disabled' : ''} class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl ${isGovernor ? 'bg-blue-700 hover:bg-blue-800' : 'bg-emerald-800 hover:bg-emerald-900'} text-white shadow-sm transition active:scale-95 disabled:cursor-not-allowed disabled:opacity-50">
                   <i class="fa-solid fa-keyboard"></i>
                 </button>
               </div>
@@ -680,18 +635,16 @@
           </div>
 
           <div class="flex items-center justify-between gap-2 border-t border-slate-100 bg-slate-50/80 px-4 py-3 sm:px-5">
-            <button onclick="votarBranco('${item.id}')" class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-[9px] font-extrabold uppercase tracking-wider text-slate-600 transition hover:border-slate-300 hover:bg-slate-100 active:scale-95">
-              Branco
-            </button>
-            <div class="flex items-center gap-2">
-              <button onclick="corrigirCargo('${item.id}')" class="rounded-xl bg-orange-500 px-3 py-2 text-[9px] font-extrabold uppercase tracking-wider text-white shadow-sm transition hover:bg-orange-600 active:scale-95">
-                Corrige
-              </button>
-              <button onclick="confirmarCargo('${item.id}')" class="flex items-center gap-1.5 rounded-xl ${isGovernor ? 'bg-blue-700 hover:bg-blue-800' : 'bg-emerald-700 hover:bg-emerald-800'} px-3.5 py-2 text-[9px] font-extrabold uppercase tracking-wider text-white shadow-sm transition active:scale-95">
-                <i class="fa-solid fa-check text-[9px]"></i>
-                <span>Confirma</span>
-              </button>
-            </div>
+            ${isLocked
+              ? `<span class="inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-wider text-amber-700"><i class="fa-solid fa-circle-check"></i> ${isGovernor ? 'NELA' : 'NESSE'} EU CONFIO</span>`
+              : `<button onclick="votarBranco('${item.id}')" class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-[9px] font-extrabold uppercase tracking-wider text-slate-600 transition hover:border-slate-300 hover:bg-slate-100 active:scale-95">Branco</button>
+                <div class="flex items-center gap-2">
+                  <button onclick="corrigirCargo('${item.id}')" class="rounded-xl bg-orange-500 px-3 py-2 text-[9px] font-extrabold uppercase tracking-wider text-white shadow-sm transition hover:bg-orange-600 active:scale-95">Corrige</button>
+                  <button onclick="confirmarCargo('${item.id}')" class="flex items-center gap-1.5 rounded-xl ${isGovernor ? 'bg-blue-700 hover:bg-blue-800' : 'bg-emerald-700 hover:bg-emerald-800'} px-3.5 py-2 text-[9px] font-extrabold uppercase tracking-wider text-white shadow-sm transition active:scale-95">
+                    <i class="fa-solid fa-check text-[9px]"></i>
+                    <span>Confirma</span>
+                  </button>
+                </div>`}
           </div>
         `;
 
@@ -742,7 +695,7 @@
               </div>
               <div class="overflow-hidden flex-grow">
                 <span class="text-[10px] uppercase font-bold ${isGovernor ? 'text-blue-700' : 'text-emerald-700'} tracking-wider flex items-center gap-1">
-                  <i class="fa-solid fa-circle-check"></i> Governadora Confirmada
+                  <i class="fa-solid fa-circle-check"></i> ${item.nome} Confirmado
                 </span>
                 <p class="text-sm font-black text-slate-900 truncate leading-tight">${item.candidato.nomeUrna || item.candidato.nome}</p>
                 <p class="text-xs text-slate-600 truncate">${item.candidato.partido || item.candidato.siglaPartido || 'Partido'}</p>
@@ -785,6 +738,7 @@
     }
 
     async function fetchCandidatoApi(cargoConfig, numero) {
+      if (cargoConfig.locked) return;
       cargoConfig.loading = true;
       renderCargosCards();
 
@@ -852,11 +806,10 @@
     }
 
     function openKeypadFor(cargoId) {
-      if (cargoId === 'dep_distrital') return;
+      const cargo = CARGOS_CONFIG.find(c => c.id === cargoId);
+      if (!cargo || cargo.locked) return;
       initAudio();
       activeKeypadCargoId = cargoId;
-      const cargo = CARGOS_CONFIG.find(c => c.id === cargoId);
-      if (!cargo) return;
 
       document.getElementById('keypadCargoNome').innerText = cargo.nome;
       document.getElementById('keypadTitle').innerText = `Vote para ${cargo.nome}`;
@@ -890,9 +843,9 @@
 
     function pressKey(num) {
       playBeep();
-      if (!activeKeypadCargoId || activeKeypadCargoId === 'dep_distrital') return;
+      if (!activeKeypadCargoId) return;
       const cargo = CARGOS_CONFIG.find(c => c.id === activeKeypadCargoId);
-      if (!cargo) return;
+      if (!cargo || cargo.locked) return;
 
       if (cargo.numero === 'BRANCO') {
         cargo.numero = '';
@@ -914,15 +867,14 @@
 
     function corrigirKeypad() {
       playCorrigeSound();
-      if (!activeKeypadCargoId || activeKeypadCargoId === 'dep_distrital') return;
+      if (!activeKeypadCargoId) return;
       const cargo = CARGOS_CONFIG.find(c => c.id === activeKeypadCargoId);
-      if (cargo) {
-        cargo.numero = '';
-        cargo.candidato = null;
-        cargo.confirmado = false;
-        updateKeypadDisplay(cargo);
-        renderCargosCards();
-      }
+      if (!cargo || cargo.locked) return;
+      cargo.numero = '';
+      cargo.candidato = null;
+      cargo.confirmado = false;
+      updateKeypadDisplay(cargo);
+      renderCargosCards();
     }
 
     function confirmarKeypad() {
@@ -933,10 +885,9 @@
     }
 
     function votarBranco(cargoId) {
-      if (cargoId === 'dep_distrital') return;
       playBeep();
       const cargo = CARGOS_CONFIG.find(c => c.id === cargoId);
-      if (!cargo) return;
+      if (!cargo || cargo.locked) return;
 
       cargo.numero = 'BRANCO';
       cargo.candidato = null;
@@ -947,10 +898,9 @@
     }
 
     function corrigirCargo(cargoId) {
-      if (cargoId === 'dep_distrital') return;
       playCorrigeSound();
       const cargo = CARGOS_CONFIG.find(c => c.id === cargoId);
-      if (!cargo) return;
+      if (!cargo || cargo.locked) return;
 
       cargo.numero = '';
       cargo.candidato = null;
@@ -960,10 +910,9 @@
     }
 
     function confirmarCargo(cargoId) {
-      if (cargoId === 'dep_distrital') return;
       initAudio();
       const cargo = CARGOS_CONFIG.find(c => c.id === cargoId);
-      if (!cargo) return;
+      if (!cargo || cargo.locked) return;
 
       if (!cargo.numero) {
         showToast(`Digite o número para ${cargo.nome}`, 'warn');
@@ -1008,39 +957,32 @@
       const listContainer = document.getElementById('colinhaListRows');
       listContainer.innerHTML = '';
 
-      // Render all cargos in official order
-      // 1. Dep Federal
-      // 2. Dep Distrital
-      // 3. 1º Senador
-      // 4. 2º Senador
-      // 5. Governador
-      // 6. Presidente
-
       CARGOS_CONFIG.forEach(item => {
         const row = document.createElement('div');
         const isUnfilled = !item.confirmado && !item.numero;
         const isGovernor = item.id === 'governador';
-        row.className = item.id === 'dep_distrital'
-          ? 'bg-emerald-50 rounded-xl p-3 border border-emerald-200 flex items-center justify-between gap-3 shadow-sm'
+        const isFederal = item.id === 'dep_federal';
+        row.className = isFederal
+          ? 'rounded-lg bg-blue-950 p-3.5 text-white shadow-sm flex items-center justify-between gap-3'
           : isGovernor
-            ? 'bg-blue-50 rounded-xl p-3 border border-blue-200 flex items-center justify-between gap-3 shadow-sm'
-            : `bg-white rounded-xl p-3 border border-slate-200 flex gap-3 shadow-xs ${isUnfilled ? 'flex-col items-start' : 'items-center justify-between'}`;
+            ? 'bg-blue-50 rounded-lg p-3 border border-blue-200 flex items-center justify-between gap-3 shadow-sm'
+            : `bg-white rounded-lg p-3 border border-slate-200 flex gap-3 shadow-xs ${isUnfilled ? 'flex-col items-start' : 'items-center justify-between'}`;
 
         let content = '';
         if (item.confirmado && item.candidato) {
           content = `
             <div class="flex min-w-0 flex-1 items-center gap-3">
-              <div class="w-10 h-12 rounded-lg ${isGovernor ? 'bg-blue-50 border-blue-200' : 'bg-emerald-50 border-emerald-200'} overflow-hidden border flex-shrink-0">
-                <img src="${item.candidato.foto || 'https://placehold.co/100x120/cbd5e1/334155?text=Foto'}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x120/cbd5e1/334155?text=Foto'">
+              <div class="w-10 h-12 rounded-md ${isFederal ? 'bg-white/10 border-white/20' : isGovernor ? 'bg-blue-50 border-blue-200' : 'bg-emerald-50 border-emerald-200'} overflow-hidden border flex-shrink-0">
+                <img src="${item.candidato.foto || 'https://placehold.co/100x120/cbd5e1/334155?text=Foto'}" alt="${item.candidato.nomeUrna || item.candidato.nome}" class="h-full w-full object-cover" onerror="this.src='https://placehold.co/100x120/cbd5e1/334155?text=Foto'">
               </div>
               <div class="min-w-0 flex-1">
-                <span class="text-[10px] uppercase font-bold ${item.id === 'dep_distrital' ? 'text-emerald-800' : isGovernor ? 'text-blue-700' : 'text-slate-400'} block">${item.id === 'dep_distrital' ? 'NOSSO ' : ''}${item.nome}</span>
-                <span class="text-sm font-black text-slate-800 break-words leading-tight block">${item.candidato.nomeUrna || item.candidato.nome}</span>
-                <span class="text-xs text-slate-500 break-words block">${item.candidato.partido || ''}</span>
+                <span class="text-[9px] uppercase font-extrabold tracking-wider ${isFederal ? 'text-amber-300' : isGovernor ? 'text-blue-700' : 'text-slate-400'} block">${item.locked ? (isGovernor ? 'Nela eu confio • ' : 'Nesse eu confio • ') : ''}${item.nome}</span>
+                <span class="text-sm font-black ${isFederal ? 'text-white' : 'text-slate-800'} break-words leading-tight block">${item.candidato.nomeUrna || item.candidato.nome}</span>
+                <span class="text-xs ${isFederal ? 'text-blue-100' : 'text-slate-500'} break-words block">${item.candidato.partido || ''}</span>
               </div>
             </div>
             <div class="text-right flex-shrink-0">
-              <span class="font-urna font-black text-2xl ${isGovernor ? 'text-blue-900' : 'text-emerald-900'}">${item.numero}</span>
+              <span class="${isFederal ? 'font-brand-number text-2xl text-amber-300' : `font-urna font-black text-2xl ${isGovernor ? 'text-blue-900' : 'text-emerald-900'}`}">${item.numero}</span>
             </div>
           `;
         } else if (item.numero === 'BRANCO') {
@@ -1093,10 +1035,10 @@
     // Build text version of colinha
     function generateTextColinha() {
       let msg = `🗳️ *MINHA COLINHA DIGITAL - DF 2026*\n\n`;
-      msg += `🍃 *DEPUTADO DISTRITAL:* WELLINGTON LUIZ - 15123 (MDB)\n`;
+      msg += `👉 *DEPUTADO FEDERAL:* ZÉ HUMBERTO - 1555 (MDB)\n`;
 
       CARGOS_CONFIG.forEach(c => {
-        if (c.id === 'dep_distrital') return;
+        if (c.id === 'dep_federal') return;
         if (c.confirmado && c.candidato) {
           msg += `👉 *${c.nome.toUpperCase()}:* ${c.candidato.nomeUrna || c.candidato.nome} - *${c.numero}*\n`;
         } else if (c.numero === 'BRANCO') {
@@ -1106,7 +1048,7 @@
         }
       });
 
-      msg += `\n🗳️ _Criado com a Colinha Digital Wellington Luiz!_`;
+      msg += `\n🗳️ _Colinha Digital Zé Humberto 1555_`;
       return msg;
     }
 
@@ -1150,7 +1092,7 @@
           scale: Math.max(2, Math.min(window.devicePixelRatio || 1, 2.5)),
           useCORS: true,
           allowTaint: false,
-          backgroundColor: '#f2f8f3',
+          backgroundColor: '#f5f8fc',
           scrollX: 0,
           scrollY: 0
         });
@@ -1161,14 +1103,14 @@
             throw new Error('Safari bloqueou a nova aba. Permita pop-ups e tente novamente.');
           }
           imageTab.document.open();
-          imageTab.document.write(`<!doctype html><html lang="pt-BR"><head><meta name="viewport" content="width=device-width, initial-scale=1"><title>Colinha Wellington Luiz</title><style>body{margin:0;padding:16px;background:#f2f8f3;font:16px system-ui,sans-serif;text-align:center}p{margin:0 auto 14px;max-width:32em;color:#292524}img{display:block;width:100%;height:auto;margin:auto;background:white}</style></head><body><p>Toque e segure a imagem para escolher <strong>Salvar em Fotos</strong>.</p><img src="${dataUrl}" alt="Minha colinha eleitoral Wellington Luiz"></body></html>`);
+          imageTab.document.write(`<!doctype html><html lang="pt-BR"><head><meta name="viewport" content="width=device-width, initial-scale=1"><title>Colinha Zé Humberto 1555</title><style>body{margin:0;padding:16px;background:#f5f8fc;font:16px system-ui,sans-serif;text-align:center}p{margin:0 auto 14px;max-width:32em;color:#292524}img{display:block;width:100%;height:auto;margin:auto;background:white}</style></head><body><p>Toque e segure a imagem para escolher <strong>Salvar em Fotos</strong>.</p><img src="${dataUrl}" alt="Minha colinha eleitoral Zé Humberto 1555"></body></html>`);
           imageTab.document.close();
           showToast('Imagem aberta. Toque e segure para salvar em Fotos.');
           return;
         }
 
         const link = document.createElement('a');
-        link.download = 'minha-colinha-wellington-luiz-df.png';
+        link.download = 'minha-colinha-ze-humberto-1555.png';
         link.href = dataUrl;
         link.style.display = 'none';
         document.body.appendChild(link);
@@ -1227,7 +1169,7 @@
 
     window.onload = function() {
       renderCargosCards();
-      console.log('Colinha Digital Wellington Luiz inicializada com sucesso.');
+      console.log('Colinha Digital Zé Humberto 1555 inicializada com sucesso.');
     };
   </script>
 </body>
